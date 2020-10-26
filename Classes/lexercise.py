@@ -32,5 +32,3 @@
 #     else:
 #         print("please choose a number")
         
- num = random.ranint(1,10)
-    print(num)

@@ -33,3 +33,4 @@ if name == name2:
 
 if name!= name2:
     print("NO these strings are different")
+

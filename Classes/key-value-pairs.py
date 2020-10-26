@@ -1,6 +1,6 @@
 #  a key allows a developt to access specific value
 movie = {
-     "name":"Star Wars", #name is the key and starwars is its value
+    "name":"Star Wars", #name is the key and starwars is its value
     "episode":4,
     "year":"1977",
     "villians":["Vader" , "Tarkin"], #you can add a list to the value of the key

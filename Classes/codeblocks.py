@@ -25,7 +25,8 @@ if pet_name <= 3:
         print(" el gato diablo")
         if pet_name ==" daisy":
                 print(" good dog!")
-    print("that name is too short for a pet")
+    
+print("that name is too short for a pet")
 else:
     print("aww sweet %s" % (pet_name)) 
 

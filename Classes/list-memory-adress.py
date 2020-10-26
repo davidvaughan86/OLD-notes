@@ -9,24 +9,19 @@
 # print(id("a"))
 
 
-a = [1,2,3]
-b = [1,2,3]
+# a = [1,2,3]
+# b = [1,2,3]
 
-print(a)#similar in value but not the same memory adress
-print(b)# using a = b would give the same address
+# print(a)#similar in value but not the same memory adress
+# print(b)# using a = b would give the same address
 
-c = [1, 2, 3, 4]
-d = c
-print(id(c) , id(d))
+# c = [1, 2, 3, 4]
+# d = c
+# print(id(c) , id(d))
 
-c.append(4)
-print(c,d) #uses this to append memory address by reassiging it to a new value that is equal to the same memory address
+# c.append(4)
+# print(c,d) #uses this to append memory address by reassiging it to a new value that is equal to the same memory address
 
 
 
-people = [
-    ["david", "vaughan" , 34],
-    ["diana", "vaughan" , 37]
-]
 
-print(people[0][2])

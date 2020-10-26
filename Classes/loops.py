@@ -1,18 +1,18 @@
-# i = 0
-# while i < 10:
-#     print(i)
-#     i = i + 1
+i = 0
+while i < 10:
+    print(i)
+    i = i + 1
 
-# a = 3
-# max_num = 11
-# while a < 20:
-#     print(a)
-#     a += i
+a = 3
+max_num = 11
+while a < 20:
+    print(a)
+    a += i
 
-# name = ""
-# while name != "David":
-#    name = input("please say your name is David\n")
-# print("great i knew you could do it")
+name = ""
+while name != "David":
+   name = input("please say your name is David\n")
+print("great i knew you could do it")
 
 a = 1
 while a < 11:

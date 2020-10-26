@@ -108,6 +108,9 @@ print(positive_number)
 # # 7. Multiply a list
 # Create a list of numbers, and a single factor (also a number), create a new list consisting of each of the numbers in the first list multiplied by the factor. Print this list.
 
+
+
+
 # # 8. Reverse a String
 # Given a string, print the string reversed.
 
