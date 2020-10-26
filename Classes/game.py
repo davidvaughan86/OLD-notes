@@ -1,18 +1,18 @@
 class Unit:
-    def __init__(self, name, position, energy = 10, work = 5):
+    def __init__(self, name, position, sanity = 10, work = 5):
         self.name = name
-        self.energy = energy
+        self.sanity = sanity
         self.work = work
         self.position = position
     
     def burden(self, work):
-        self.energy = self.energy - work
+        self.sanity = self.sanity - work
 
     def attack(self, enemy):
         enemy.burden(self.work)
 
     def restore(self, work):
-        self.energy = self.energy + work
+        self.sanity = self.sanity + work
     
     def charge(self, things):
         things.restore(self.work)
@@ -28,8 +28,8 @@ class Unit:
             self.position = [self.position[0]-1, self.position[1]]
 
 class Player(Unit):
-    def __init__(self, name, position, energy = 10):
-        super().__init__(name,position,energy)
+    def __init__(self, name, position, sanity = 10):
+        super().__init__(name,position,sanity)
 
 class Winning(Unit):
     def __init__(self, name, position):
@@ -41,19 +41,19 @@ class Supplies(Unit):
         
          
     # def burden(self, work):
-    #     self.energy = self.energy - work
+    #     self.sanity = self.sanity - work
 
     # def attack(self, enemy):
     #     enemy.burden(self.work)
 # class Good_Stapler(Supplies):
-#     def __init__(self, name, position, energy = 5):
+#     def __init__(self, name, position, sanity = 5):
 #         super().__init__(name, position)
 #         self.owner = None
 
        
 
     # def use(self):
-    #     self.owner.energy += 5
+    #     self.owner.sanity += 5
     #     for i in range(len(self.owner.inventory)):
     #         if self.owner.inventory[i] == self:
     #             del self.owner.inventory[i]
@@ -89,14 +89,14 @@ enemies = [
     Unit("Dwight and hes looking for that pen from 2 months ago", [5,4]),
     Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [3,2]),
     Unit("Toby and he wants me to sign that HR document for indecent exposure", [1,5]),
-    Unit("Michael and hes got something stupid to say", [-2,4]),
-    Unit("Dwight and hes looking for that pen from 2 months ago", [-5,4]),
-    Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [-3,2]),
-    Unit("Toby  and he wants me to sign that HR document for indecent exposure", [-1,5]),
-    Unit("Michael and hes got something stupid to say", [2,-4]),
-    Unit("Dwight and hes looking for that pen from 2 months ago", [5,-4]),
-    Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [3,-2]),
-    Unit("Toby  and he wants me to sign that HR document for indecent exposure", [1,-5])
+    Unit("Michael and hes got a new dance", [-2,4]),
+    Unit("Dwight and hes still exepcting that email", [-5,4]),
+    Unit("Angela and shes inviting me to singles night for widowed Christians", [-3,2]),
+    Unit("Toby and he wants me to sign that HR document for calling out in the parking lot", [-1,5]),
+    Unit("Michael and hes hiding from Jan", [2,-4]),
+    Unit("Dwight and hes in charge for the next 30 minutes", [5,-4]),
+    Unit("Angela and shes shes inviting everyone to Dwight's birthday gathering", [3,-2]),
+    Unit("Toby  and he wants me to sign that HR document for misappopriating Angela's event money", [1,-5])
 ]
 
 winning = [
@@ -119,7 +119,7 @@ playing = True
 
 while playing:
     print("Employee:\n", player.name)
-    print("energy:\n", player.energy)
+    print("sanity:\n", player.sanity)
     print("location:\n", player.position)
     show_menu()
     try:
@@ -144,7 +144,7 @@ while playing:
     for enemy in enemies:  
         if enemy.position == player.position:
             print(f"Oh great it's {enemy.name}")
-            print("you just got burderned with crap to do")
+            print("They want to destroy your sanity!")
             enemy.attack(player)
     
     for winner in winning:
@@ -152,8 +152,16 @@ while playing:
             print(f"Look! {winner.name}")
             playing = False
             break
+        # if player.poistion == [7,7]:
+        #     print("The exit is the other way. Keep going and you'll never go home!")
+        # elif player.poistion == [-7,-7]:
+        #     print("The exit is the other way. Keep going and you'll never go home!")
+        # elif player.poistion == [-7,7]:
+        #     print("The exit is the other way. Keep going and you'll never go home!")
+        # elif player.poistion == [7,-7]:
+        #     print("The exit is the other way. Keep going and you'll never go home!")
 
-    if player.energy == 0:
+    if player.sanity == 0:
         print("Youll never go home now!")
         print("Game Over! You're stuck at the office!!")
         break #break is used to break out of a loop by not caring what the variable says
