@@ -2,10 +2,20 @@ class Unit:
     def __init__(self, name, position, energy = 10, work = 5):
         self.name = name
         self.energy = energy
+        self.work = work
         self.position = position
-
+    
     def burden(self, work):
         self.energy = self.energy - work
+
+    def attack(self, enemy):
+        enemy.burden(self.work)
+
+    def restore(self, work):
+        self.energy = self.energy + work
+    
+    def charge(self, things):
+        things.restore(self.work)
 
     def move(self, dir):
         if dir == "up":
@@ -16,14 +26,49 @@ class Unit:
             self.position = [self.position[0]+1, self.position[1]]
         elif dir == "left":
             self.position = [self.position[0]-1, self.position[1]]
+
 class Player(Unit):
     def __init__(self, name, position, energy = 10):
         super().__init__(name,position,energy)
-    
 
-class Menu:
-    def __init__(self, player):
-        self.player = player
+class Winning(Unit):
+    def __init__(self, name, position):
+        super().__init__(name,position)
+
+class Supplies(Unit):
+    def __init__(self, name, position):
+        super().__init__(name,position)
+        
+         
+    # def burden(self, work):
+    #     self.energy = self.energy - work
+
+    # def attack(self, enemy):
+    #     enemy.burden(self.work)
+# class Good_Stapler(Supplies):
+#     def __init__(self, name, position, energy = 5):
+#         super().__init__(name, position)
+#         self.owner = None
+
+       
+
+    # def use(self):
+    #     self.owner.energy += 5
+    #     for i in range(len(self.owner.inventory)):
+    #         if self.owner.inventory[i] == self:
+    #             del self.owner.inventory[i]
+    #     self.owner = None
+
+
+
+# class Dollar(Supplies):
+#     def __init__(self, nanme, position)
+#     super().__init__(name, position)
+#     self.owner = None
+
+# class Menu:
+#     def __init__(self, player):
+#         self.player = player
 
 menu = {
     "Move":{
@@ -36,16 +81,34 @@ menu = {
     }
 }
 
-name = input("Who is trying to escape the office?\n")
+name = input("It's half passed 4 and you are ret2go! Who is trying to escape the office?\n")
 player = Player(name, [1,1])
 
 enemies = [
-    Unit("Michael", [2,4]),#[-2,4],[2,-4],[-2,-4]),
-    Unit("Dwight", [5,4]),#[-5,4],[5,-4],[-5,-4]),
-    Unit("Angela", [3,2]),#[-3,2],[3,-2],[-3,-2]),
-    Unit("Toby", [2,4])#[2,4],[-2,4],[2,-4])
+    Unit("Michael and hes got something stupid to say", [2,4]),
+    Unit("Dwight and hes looking for that pen from 2 months ago", [5,4]),
+    Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [3,2]),
+    Unit("Toby and he wants me to sign that HR document for indecent exposure", [1,5]),
+    Unit("Michael and hes got something stupid to say", [-2,4]),
+    Unit("Dwight and hes looking for that pen from 2 months ago", [-5,4]),
+    Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [-3,2]),
+    Unit("Toby  and he wants me to sign that HR document for indecent exposure", [-1,5]),
+    Unit("Michael and hes got something stupid to say", [2,-4]),
+    Unit("Dwight and hes looking for that pen from 2 months ago", [5,-4]),
+    Unit("Angela and shes wants us to attend her cat's wedding...and funeral...again", [3,-2]),
+    Unit("Toby  and he wants me to sign that HR document for indecent exposure", [1,-5])
 ]
 
+winning = [
+    Unit("Finally you find Jim and Pam and can get the fuck outta here!" , [5,5]),
+    Unit("Finally you find Jim and Pam and can get the fuck outta here!" , [-5,5]),
+    Unit("Finally you find Jim and Pam and can get the fuck outta here!" , [5, -5]),
+    Unit("Finally you find Jim and Pam and can get the fuck outta here!" , [-5,-5])
+]
+
+stuff = [
+    Supplies("You found LITERALLY the only working stapler - that put you in a good mood to deal with their BS", [3,5])
+]
 menu = ["Move up", "Move down", "Move left", "Move Right"]
 
 def show_menu():
@@ -55,7 +118,9 @@ def show_menu():
 playing = True
 
 while playing:
-    print(player)
+    print("Employee:\n", player.name)
+    print("energy:\n", player.energy)
+    print("location:\n", player.position)
     show_menu()
     try:
         action = int(input("Escape! but which way?\n"))
@@ -72,9 +137,23 @@ while playing:
             player.move("left")
         elif action == 4:
             player.move("right")
-    
+    for things in stuff:
+        if things.position == player.position:
+            print(f"{things.name}")
+            things.charge(player)
     for enemy in enemies:  
         if enemy.position == player.position:
-            print("Oh great it's {enemy.name}:")
-            print("Your excuse worked! You got away...")
-            enemy.burden(player)
+            print(f"Oh great it's {enemy.name}")
+            print("you just got burderned with crap to do")
+            enemy.attack(player)
+    
+    for winner in winning:
+        if winner.position == player.position:
+            print(f"Look! {winner.name}")
+            playing = False
+            break
+
+    if player.energy == 0:
+        print("Youll never go home now!")
+        print("Game Over! You're stuck at the office!!")
+        break #break is used to break out of a loop by not caring what the variable says
