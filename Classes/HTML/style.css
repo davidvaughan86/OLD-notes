@@ -1,0 +1,9 @@
+div {
+  text-decoration: underline;
+  columns: #74a5d4;
+  font-size: 6px;
+}
+.content-item {
+  color: #75a5d4;
+  background: #efefef;
+}

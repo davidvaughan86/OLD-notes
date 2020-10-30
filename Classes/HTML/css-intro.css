@@ -1,0 +1,38 @@
+/* <!-- cascading style sheet -->
+
+<!-- CSS - Cascading Style Sheet is the correct way to change the apperence of elements on a webpage. 
+ cascading effect allows the developer to write less code for a 
+ greater impact
+---Rule (or Ruleset) - In CSS a rule is a grouping of declarations 
+that work together to modify the apperence of the selected item
+---Selector - The part of the css Rule that determines which items 
+will be affected by the rule
+---Declaration - The property/value(s) pair in a css rule. There 
+can be many declarations in a Rule -->
+
+<!-- all rules start off with selector. the selector determiens 
+    which rules impact -->
+<!-- curly brackets for selector. must close as well
+inside the selector is the declarations can have multiple in a 
+block.
+----inline style requires double quotes for this attri of css
+
+tag selector --> */
+Selector{
+    property:value1;
+    property:value2 value2a value2b
+}
+
+a {
+    front -weight:bold;
+    background:blue:
+}
+div {text-decoration:underline; color: rbg}
+
+h1 {
+    font-size:6px;
+}
+
+.content-item {
+    color
+}

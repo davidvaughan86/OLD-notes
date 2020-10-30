@@ -1,0 +1,11 @@
+/* Create a html page with a h1 element, a div 
+with class 
+main-content, and a footer with at least 2 links.
+create a stylesheet called style.css and style 
+the h1 element, 
+the main content class, and the hover of the 
+links. */
+
+h1 {
+  color: blue;
+}

@@ -48,4 +48,4 @@ class Hero(Mob):
 
 hero = Hero("David")
 print(hero.attack)
-    
+    #ask alex about this

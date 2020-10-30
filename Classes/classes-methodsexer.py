@@ -19,7 +19,8 @@ racecar = Vehicle("Genesis", 0, 25)
 racecar.increase_speed(racecar)
 
 
-
+class Person:
+    
 
 
 # speed and position should start at 0, top_speed and 
@@ -33,8 +34,8 @@ racecar.increase_speed(racecar)
 # In the accelerate method, do not allow the vehicle to 
 # pass the top speed.
 # modify the instances of the vehicles to include 
-# 
-#acceleration and top speed when you instance the vehicles.
+
+# acceleration and top speed when you instance the vehicles.
 # using a while loop and assuming each iteration of the 
 # loop is a 'second' have the vehicles 'race' by 
 # accelerating as much as possible on a drag strip for 

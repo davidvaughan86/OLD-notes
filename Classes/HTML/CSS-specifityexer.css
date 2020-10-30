@@ -1,0 +1,9 @@
+.active {
+  border: blue;
+}
+.completed {
+  text-decoration: line-through;
+}
+.background {
+  color: crimson;
+}
