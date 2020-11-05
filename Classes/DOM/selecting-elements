@@ -1,0 +1,12 @@
+// DOM IS DATA OBJECT MODEL
+
+EVERY OBJECT IS PART OF A BROWSER
+
+querySelector to get 1 item of the class
+querySelectorall to get all items of the class
+
+DOM can create elements
+
+using teh create.element div
+
+append similar to a push for an array in JS

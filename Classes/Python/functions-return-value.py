@@ -13,12 +13,12 @@ print(final)# you get none if there is no return value
 #if the return statement does not match the def statement the function will not result
 
 def make_dict(first, last, phone, zip):
-    return {
+    data = {
         "first_name":first,
         "last_name":last, 
         "phone number":phone,
-        "zip code":zip
+        "zip code": zip
     }
 david_data = make_dict("david", "vaughan", "3233233232", "91344")
 for key in david_data:
-    print(key)
+    print(david_data[key])

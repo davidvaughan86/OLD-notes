@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .container div {
+        text-align: center;
+        padding: 10px;
+        margin: 6px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .container {
+    display: flex;
+  }
+</style>
+
+<!-- non-flexbox way -->
+<!-- have to keep changing the size, not really responsive -->
+<!-- <style>
+    .container {
+        width:400px;
+    }
+    .container div{
+        width:50px;
+        display: inline-block;
+        padding:10px;
+        border:1px solid;
+        margin:6px;
+        text-align:center;
+    }
+</style> -->
+<!-- using the div with the 4 items -->
+
+<!-- flexbox way -->
+<!-- <style>
+    .container {
+        width:400px;
+        display:flex;
+    }
+    .container div{
+        width:100%;
+        padding:10px;
+        border:1px solid;
+        margin:6px;
+        text-align:center;
+    }
+</style>
+<style>    
+    .container {
+           width:400px;
+           display:flex;
+           justify-content: space-between;
+           
+       }
+       .container div{
+           width:40px;
+           padding:10px;
+           border:1px solid;
+           margin:6px;
+           text-align:center;
+       }
+   </style> -->
+
+<!-- flex wrap is really helpful for responsivenes -->
+<!-- <style>
+    .container {
+        width:400px;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .container div{
+        width:120px;
+        padding:10px;
+        border:1px solid;
+        margin:6px;
+        text-align:center;
+    }
+</style>
+<div class="container">
+    <div> 
+        <p>Item 1</p>
+        <p>
+            Non veniam tempor esse Lorem amet 
+            Lorem incididunt duis mollit dolor aute 
+            ad adipisicing duis.
+        </p>
+    </div>
+
+</div> -->
