@@ -20,7 +20,7 @@ function buildDeck() {
       let weight = parseInt(values[i]);
       if (values[i] == "J" || values[i] == "Q" || values[i] == "K") weight = 10;
       if (values[i] == "A") weight = 11;
-      var card = { Value: values[i], Suit: suits[x], Weight: weight };
+      let card = { Value: values[i], Suit: suits[x], Weight: weight };
       deck.push(new Card(values[x], suits[i]));
     }
   }
@@ -50,22 +50,22 @@ function shuffle(deck) {
     let tmp = deck[location1];
   }
 }
-var players = new Array();
+let players = new Array();
 function createPlayers(num) {
   players = new Array();
-  for (var i = 1; i <= num; i++) {
-    var hand = new Array();
-    var player = { Name: "Player " + i, ID: i, Points: 0, Hand: hand };
+  for (let i = 1; i <= num; i++) {
+    let hand = new Array();
+    let player = { Name: "Player " + i, ID: i, Points: 0, Hand: hand };
     players.push(player);
   }
 }
 function createPlayersUI() {
   document.getElementById("players").innerHTML = "";
-  for (var i = 0; i < players.length; i++) {
-    var div_player = document.createElement("div");
-    var div_playerid = document.createElement("div");
-    var div_hand = document.createElement("div");
-    var div_points = document.createElement("div");
+  for (let i = 0; i < players.length; i++) {
+    let div_player = document.createElement("div");
+    let div_playerid = document.createElement("div");
+    let div_hand = document.createElement("div");
+    let div_points = document.createElement("div");
 
     div_points.className = "points";
     div_points.id = "points_" + i;
@@ -95,9 +95,9 @@ function startblackjack() {
 function dealHands() {
   // alternate handing cards to each player
   // 2 cards each
-  for (var i = 0; i < 2; i++) {
-    for (var x = 0; x < players.length; x++) {
-      var card = deck.pop();
+  for (let i = 0; i < 2; i++) {
+    for (let x = 0; x < players.length; x++) {
+      let card = deck.pop();
       players[x].Hand.push(card);
       renderCard(card, x);
       updatePoints();
@@ -107,21 +107,21 @@ function dealHands() {
   updateDeck();
 }
 function renderCard(card, player) {
-  var hand = document.getElementById("hand_" + player);
+  let hand = document.getElementById("hand_" + player);
   hand.appendChild(getCardUI(card));
 }
 
 function getCardUI(card) {
-  var el = document.createElement("div");
+  let el = document.createElement("div");
   el.className = "card";
   el.innerHTML = card.Suit + " " + card.Value;
   return el;
 }
-var currentPlayer = 0;
+let currentPlayer = 0;
 function hitMe() {
   // pop a card from the deck to the current player
   // check if current player new points are over 21
-  var card = deck.pop();
+  let card = deck.pop();
   players[currentPlayer].Hand.push(card);
   renderCard(card, currentPlayer);
   updatePoints();
@@ -148,10 +148,10 @@ function stay() {
 }
 
 function end() {
-  var winner = -1;
-  var score = 0;
+  let winner = -1;
+  let score = 0;
 
-  for (var i = 0; i < players.length; i++) {
+  for (let i = 0; i < players.length; i++) {
     if (players[i].Points > score && players[i].Points < 22) {
       winner = i;
     }

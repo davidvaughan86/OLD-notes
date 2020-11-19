@@ -1,0 +1,5 @@
+.checkbox-group {
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-evenly;
+}

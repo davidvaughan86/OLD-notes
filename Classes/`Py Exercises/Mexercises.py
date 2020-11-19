@@ -39,11 +39,11 @@
 
 
 
-count = 0
-yes = input("would you like a coin?")
-while count == yes
-    print( count "coints")
-    count = 0 + 1
+# count = 0
+# yes = input("would you like a coin?")
+# while count == yes:
+#     print( count "counts")
+#     count = 0 + 1
 
     
 

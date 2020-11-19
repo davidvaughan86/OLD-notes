@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<body>
+  <form id="login">
+    <input name="username" />
+    <input name="password" type="password" />
+    <input name="agree" checked type="checkbox" />Agree to terms?
+    <button>Login</button>
+  </form>
+  <script>
+    let loginForm = document.getElementById("login");
+    loginForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      let results = [...evt.target.elements];
+      //   .filter((el) => el.name)
+      //   .map((el) => ({ name: el.name, value: el.value }));
+      let d = document.createElement("div");
+      d.append(results[0].name, ":", results[0].value);
+      document.body.append(d);
+
+      let email = document.createElement("input");
+      email.setAttribute("name", "email");
+      email.setAttribute("placeholder", "email");
+      loginForm.appendChild(email);
+      let date = document.createElement("input");
+      date.setAttribute("type", "date");
+      loginForm.appendChild(date);
+    });
+  </script>
+</body>
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<body>
+  
+  <script>
+
+  </script>
+</body> -->

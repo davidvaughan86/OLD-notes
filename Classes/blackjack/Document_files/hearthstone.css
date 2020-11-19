@@ -1,0 +1,39 @@
+/* .container {
+  background-color: indigo;
+} */
+
+.display_container {
+  /* max-width: 800px;
+  width: 1000px;
+  border: 5px solid silver;
+  border-radius: 50px;
+  background-color: rgb(250, 210, 31); */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  text-decoration: honeydew;
+  margin-left: 11%;
+  text-align: end;
+  text
+}
+.display_container img {
+  width: 1000px;
+}
+.h1 {
+  top: 0;
+}
+
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.input_filter {
+  margin-top: 100px;
+  width: 200px;
+}
+

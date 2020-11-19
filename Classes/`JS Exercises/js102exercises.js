@@ -141,26 +141,3 @@
 // let myCars = [...cars, volvo, jeep];
 // console.log(myCars);
 
-const request = new XMLHttpRequest();
-request.onreadystatechange = function () {
-  if (this.readyState === 4 && this.status == 200) {
-    // in order to make sure the read state is at stage 4 - request finished
-    console.console.log(this);
-  }
-};
-request.open("GET", "./sample.text");
-request.send();
-// 1. create the XMLhttprequest object
-// 2. add an onreadystate change  event handler function (variable.onreadystatechange = function ())
-// 3. set your handler functuon to check for teh final readystate and a successful status (final is 4)
-// 4. open the request (open("GET", "text/web")
-// 5. send() the request
-
-fetch("./sample.txt").then((response) => {
-  console.log(response);
-});
-// using fetch to reduce to amount of lines from using GET
-// .then() chains the call from fetch(URL) and passes in the handler function using the function arrow
-// console log your handler
-
-// AJAX lets you request data from teh server without reloading the page
