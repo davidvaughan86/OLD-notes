@@ -1,0 +1,1 @@
+[{"type":"Freighter","speed":"medium","cargo":"large","payload":"low"},{"type":"Fighter","speed":"fast","cargo":"none","payload":"medium"},{"type":"Bomber","speed":"slow","cargo":"none","payload":"high"},{"type":"speeder","speed":"Fast","cargo":"none","payload":"none"}]
