@@ -29,12 +29,7 @@ app.get("/about", (req, res) => {
   //   res.writeHead(200);
   res.send("<div>This is about</div>");
 });
-const sendFavicon = (req, res) => {
-  fs.readFile("/favicon.ico", (err, data) => {
-    if (err) return res.send(err);
-    res.send(data);
-  });
-};
+
 /*
     Routes can have any number of arguments, but the first is the pattern to match 
 */
